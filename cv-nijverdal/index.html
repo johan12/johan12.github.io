@@ -138,8 +138,8 @@
     </div>
 
     <div class="callout warn">
-      <h3>Tado laat de vloerpompen lopen bij tapwater</h3>
-      <p>Software-interlock op de pompen werkt hier niet. Tussen T-stuk 8A en 8B komt 2-wegklep SV2: dicht tijdens tapwater, open tijdens CV. De Tado-pompen draaien dan alleen nog over de 50 L buffer. De 12 kW zuigt uitsluitend door de boilerspiraal.</p>
+      <h3>Tado laat beide vloerpompen lopen bij tapwater</h3>
+      <p>Tado stuurt de pomp van de VV in de hoofdwoning én de pomp van de VV in de aanbouw. Software-interlock op die pompen werkt hier niet. Tussen T-stuk 8A en 8B komt 2-wegklep SV2: dicht tijdens tapwater, open tijdens CV. De pompen draaien dan alleen nog over de 50 L buffer. De 12 kW zuigt uitsluitend door de boilerspiraal.</p>
     </div>
     <div class="callout">
       <h3>Inlaatcombinatie is drinkwater, geen CV</h3>
@@ -168,6 +168,8 @@
         <text x="248" y="32" fill="var(--mute)" font-size="12" font-weight="700">Binnen · kelder max. 160 cm</text>
 
         <rect x="208" y="40" width="16" height="664" fill="var(--fill)" stroke="var(--wall)" />
+
+        <path d="M400 634 V712 H748 V368 H560 V292" fill="none" stroke="var(--wall)" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="round" pointer-events="none" />
 
         <path class="pipe" data-on="cv,dhw,defrost" d="M178 112 H275" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
         <path class="pipe" data-on="cv,defrost" d="M307 112 H415" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
@@ -304,26 +306,26 @@
 
         <g class="hit" data-part="12">
           <rect x="760" y="380" width="240" height="110" rx="6" fill="var(--fill)" stroke="var(--line)" />
-          <text x="772" y="402" fill="var(--ink)" font-size="12" font-weight="600">12  Hoofd-VV · Tado</text>
-          <text x="772" y="422" fill="var(--mute)" font-size="11">2 pompen in dit blok</text>
-          <text x="772" y="438" fill="var(--mute)" font-size="11">Tado schakelt, ook bij tapwater</text>
+          <text x="772" y="402" fill="var(--ink)" font-size="12" font-weight="600">12  VV hoofdwoning</text>
+          <text x="772" y="422" fill="var(--mute)" font-size="11">1 pomp, Tado</text>
+          <text x="772" y="438" fill="var(--mute)" font-size="11">ook aan bij tapwater</text>
         </g>
         <g>
           <circle cx="968" cy="430" r="11" fill="var(--fill)" stroke="var(--line)" />
           <polygon points="963,424 963,436 976,430" fill="var(--ink)" />
         </g>
-        <g>
-          <circle cx="968" cy="462" r="11" fill="var(--fill)" stroke="var(--line)" />
-          <polygon points="963,456 963,468 976,462" fill="var(--ink)" />
-        </g>
         <g class="hit" data-part="13">
-          <rect x="1020" y="380" width="230" height="110" rx="6" fill="var(--fill)" stroke="var(--line)" />
-          <text x="1032" y="402" fill="var(--ink)" font-size="12" font-weight="600">13  Oude as</text>
-          <text x="1032" y="422" fill="var(--mute)" font-size="11">zolder 25 mm</text>
-          <text x="1032" y="438" fill="var(--mute)" font-size="11">aanbouw 16 mm VV + radiator</text>
+          <rect x="1020" y="380" width="230" height="130" rx="6" fill="var(--fill)" stroke="var(--line)" />
+          <text x="1032" y="402" fill="var(--ink)" font-size="12" font-weight="600">13  Oude 25 mm-as</text>
+          <text x="1032" y="422" fill="var(--mute)" font-size="11">via T-stuk T2</text>
+          <text x="1032" y="438" fill="var(--mute)" font-size="11">alle radiatoren</text>
+          <text x="1032" y="454" fill="var(--mute)" font-size="11">VV aanbouw + Tado-pomp</text>
+        </g>
+        <g>
+          <circle cx="1218" cy="478" r="11" fill="var(--fill)" stroke="var(--line)" />
+          <polygon points="1213,472 1213,484 1226,478" fill="var(--ink)" />
         </g>
 
-        <path d="M400 606 H236 V348 H560 V290" fill="none" stroke="var(--wall)" stroke-width="1.6" stroke-dasharray="5 4" stroke-linecap="round" />
         <g><rect x="37" y="97" width="40" height="14" rx="2" fill="var(--paper)" /><text x="40" y="108" fill="var(--hot)" font-size="10">32 mm</text></g>
         <g><rect x="37" y="260" width="40" height="14" rx="2" fill="var(--paper)" /><text x="40" y="271" fill="var(--cold)" font-size="10">32 mm</text></g>
         <g><rect x="233" y="125" width="24" height="14" rx="2" fill="var(--paper)" /><text x="236" y="136" fill="var(--mute)" font-size="10">AB</text></g>
@@ -338,13 +340,13 @@
         <g><rect x="455" y="307" width="72" height="14" rx="2" fill="var(--paper)" /><text x="458" y="318" fill="var(--mute)" font-size="10">CV-expansie</text></g>
         <g><rect x="545" y="293" width="42" height="14" rx="2" fill="var(--paper)" /><text x="548" y="304" fill="var(--mute)" font-size="10">vul CV</text></g>
         <g><rect x="695" y="257" width="62" height="14" rx="2" fill="var(--paper)" /><text x="698" y="268" fill="var(--mute)" font-size="10">huisretour</text></g>
-        <g><rect x="645" y="87" width="72" height="14" rx="2" fill="var(--paper)" /><text x="648" y="98" fill="var(--mute)" font-size="10">T2 · 25 mm</text></g>
+        <g><rect x="645" y="87" width="108" height="14" rx="2" fill="var(--paper)" /><text x="648" y="98" fill="var(--mute)" font-size="10">T2 · 25 mm oude as</text></g>
         <g><rect x="275" y="507" width="128" height="14" rx="2" fill="var(--paper)" /><text x="278" y="518" fill="var(--mute)" font-size="10">spiraalretour naar 8B</text></g>
         <g><rect x="245" y="667" width="62" height="14" rx="2" fill="var(--paper)" /><text x="248" y="678" fill="var(--mute)" font-size="10">watermeter</text></g>
         <g><rect x="365" y="677" width="118" height="14" rx="2" fill="var(--paper)" /><text x="368" y="688" fill="var(--mute)" font-size="10">drinkwater · niet CV</text></g>
         <g><rect x="505" y="564" width="128" height="14" rx="2" fill="var(--paper)" /><text x="508" y="575" fill="var(--mute)" font-size="10">koud water de tank in</text></g>
-        <g><rect x="733" y="437" width="62" height="14" rx="2" fill="var(--paper)" /><text x="736" y="448" fill="var(--mute)" font-size="10">mengkraan</text></g>
-        <g><rect x="245" y="331" width="128" height="14" rx="2" fill="var(--paper)" /><text x="248" y="342" fill="var(--mute)" font-size="10">stippellijn: geen leiding</text></g>
+        <g><rect x="695" y="407" width="62" height="14" rx="2" fill="var(--paper)" /><text x="698" y="418" fill="var(--mute)" font-size="10">mengkraan</text></g>
+        <g><rect x="427" y="697" width="148" height="14" rx="2" fill="var(--paper)" /><text x="430" y="708" fill="var(--mute)" font-size="10">stippellijn · geen leiding</text></g>
         <g><rect x="845" y="139" width="82" height="14" rx="2" fill="var(--paper)" /><text x="848" y="150" fill="var(--mute)" font-size="10">aanvoer omlaag</text></g>
         <g><rect x="905" y="257" width="82" height="14" rx="2" fill="var(--paper)" /><text x="908" y="268" fill="var(--mute)" font-size="10">retour omhoog</text></g>
         <line x1="40" y1="716" x2="74" y2="716" stroke="var(--hot)" stroke-width="3.5" />
@@ -374,7 +376,7 @@
         <tr><td>Vuilafscheider</td><td>Flamco Clean Smart, liefst 1¼ inch, op retour naar buitenunit</td></tr>
         <tr><td>Inlaatcombinatie</td><td>Alleen drinkwater (watermeter → tank). CV vullen via 11.1</td></tr>
         <tr><td>Mengkraan</td><td>Caleffi Ø22 mm, tank tot 60 °C naar ca. 40 °C naar de kranen</td></tr>
-        <tr><td>Verwarming</td><td>Hoofd-VV met twee vloerpompen (Tado) + oude as (zolder 25 mm, aanbouw 16 mm + radiator)</td></tr>
+        <tr><td>Verwarming</td><td>VV hoofdwoning (Tado-pomp). T-stuk naar oude 25 mm-as: alle radiatoren plus VV aanbouw met eigen Tado-pomp</td></tr>
         <tr><td>Backup</td><td>Midea 3+6 kW elektrische backup blijft uit</td></tr>
       </tbody>
     </table>
@@ -396,8 +398,8 @@
         <tr><td>10</td><td>Hoofdwatermeter</td><td>25 mm koud uit de muur</td></tr>
         <tr><td>11</td><td>Expansievat CV 25 L</td><td>Flamco Flexcon op de CV-retour</td></tr>
         <tr><td>11.1</td><td>CV-vulinrichting</td><td>Apart kraantje om het CV-circuit bij te vullen · niet de inlaatcombinatie</td></tr>
-        <tr><td>12</td><td>Hoofd-VV + Tado</td><td>Twee vloerpompen, Tado schakelt ze</td></tr>
-        <tr><td>13</td><td>Oude CV-as</td><td>Zolder 25 mm · aanbouw 16 mm VV + radiator</td></tr>
+        <tr><td>12</td><td>VV hoofdwoning</td><td>Eén vloerverwarmingspomp, Tado schakelt die</td></tr>
+        <tr><td>13</td><td>Oude 25 mm-as</td><td>Via T-stuk T2: alle radiatoren én VV aanbouw met eigen Tado-pomp</td></tr>
         <tr><td>14</td><td>Mengkraan</td><td>Caleffi 22 mm · 60 °C uit de tank naar ~40 °C naar de kranen</td></tr>
         <tr><td>15</td><td>T-stuk huisretour</td><td>VV en oude as komen hier samen</td></tr>
       </tbody>
@@ -427,8 +429,8 @@
       "10": ["Hoofdwatermeter", "25 mm koud uit de muur. Voedt de inlaatcombinatie, niet het CV-circuit."],
       "11": ["Expansievat CV 25 L", "Flamco Flexcon op de CV-retour, extra naast de 8 L in de Midea."],
       "11.1": ["CV-vulinrichting", "Apart kraantje om het CV-circuit bij te vullen. Niet de inlaatcombinatie. Het stippellijntje markeert alleen: twee gescheiden vulpunten."],
-      "12": ["Hoofd-VV + Tado", "Twee vloerpompen in dit blok. Tado schakelt ze, ook tijdens tapwater."],
-      "13": ["Oude CV-as", "Zolder 25 mm, aanbouw 16 mm vloerverwarming plus radiator. Retour komt samen in T-stuk 15."],
+      "12": ["VV hoofdwoning", "Eén vloerverwarmingspomp in de hoofdwoning, Tado schakelt die. Mag tijdens tapwater blijven lopen."],
+      "13": ["Oude 25 mm-as", "Via T-stuk T2 vanaf de hoofdaanvoer. Die 25 mm voedt alle radiatoren én de vloerverwarming in de aanbouw. De aanbouw heeft een eigen Tado-pomp."],
       "14": ["Mengkraan", "Caleffi Ø22 mm. Tank mag tot 60 °C; naar de kranen ca. 40 °C."],
       "15": ["T-stuk huisretour", "Hier komen de retour van de hoofd-VV en de oude as samen."]
     };
