@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Koppelingsschema warmtepomp · Nijverdal</title>
+  <style>
+    :root {
+      --hot: #b42318;
+      --cold: #175cd3;
+      --coil: #c2410c;
+      --ink: #18181b;
+      --mute: #52525b;
+      --fill: #f4f4f5;
+      --line: #d4d4d8;
+      --wall: #a1a1aa;
+      --paper: #ffffff;
+      --band: #fafafa;
+      --band2: #f4f4f5;
+      --bg: #fafafa;
+      --accent: #18181b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.45;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1 { font-size: 28px; font-weight: 650; margin: 0 0 8px; letter-spacing: -0.02em; }
+    h2 { font-size: 18px; font-weight: 650; margin: 28px 0 10px; }
+    p { margin: 0 0 12px; }
+    .sub { color: var(--mute); }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .stat {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .stat strong { display: block; font-size: 18px; }
+    .stat span { color: var(--mute); font-size: 13px; }
+    .callout {
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--ink);
+      background: var(--paper);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 12px 0;
+    }
+    .callout.warn { border-left-color: #b54708; }
+    .callout h3 { margin: 0 0 6px; font-size: 14px; }
+    .modes { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .modes button {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+    .modes button[aria-pressed="true"] {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+    .diagram {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: auto;
+    }
+    svg { display: block; min-width: 920px; width: 100%; }
+    .caption { color: var(--mute); font-size: 13px; margin-top: 8px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { font-weight: 600; background: var(--band); }
+    tr:last-child td { border-bottom: 0; }
+    tr:nth-child(even) td { background: var(--band); }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .card h2 { margin-top: 0; }
+    footer { color: var(--mute); font-size: 13px; margin-top: 32px; }
+    @media (max-width: 800px) {
+      .stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media print {
+      .modes { display: none; }
+      body { background: #fff; }
+      main { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Koppelingsschema Nijverdal</h1>
+    <p class="sub">
+      Ter review. Jaren-30 woning, kelder max. 160 cm, boiler liggend.
+      Aanvoer boven, retour als middenrail, boiler links-onder, verwarming rechts-onder.
+    </p>
+
+    <div class="stats">
+      <div class="stat"><strong>12T · 3~</strong><span>Midea Arctic MHC-V12W/D2RN7</span></div>
+      <div class="stat"><strong>A+</strong><span>NEXT-300H XL-LE1 liggend</span></div>
+      <div class="stat"><strong>50 L + 25 L</strong><span>Buffer parallel + CV-expansie</span></div>
+      <div class="stat"><strong>SV2</strong><span>Tado-pompen mogen blijven lopen</span></div>
+    </div>
+
+    <div class="callout warn">
+      <h3>Tado laat de vloerpompen lopen bij tapwater</h3>
+      <p>Software-interlock op de pompen werkt hier niet. Tussen T-stuk 8A en 8B komt 2-wegklep SV2: dicht tijdens tapwater, open tijdens CV. De Tado-pompen draaien dan alleen nog over de 50 L buffer. De 12 kW zuigt uitsluitend door de boilerspiraal.</p>
+    </div>
+    <div class="callout">
+      <h3>Inlaatcombinatie is drinkwater, geen CV</h3>
+      <p>De inlaatcombinatie (9) zit op de koude leiding naar de NEXT-tank: keerklep en 8 bar-overstort voor opgeslagen tapwater. Het CV-circuit vult u apart bij het buffervat (11.1), met eigen 3 bar-overstort en het CV-expansievat (11).</p>
+    </div>
+
+    <div class="modes" role="group" aria-label="Bedrijfsstand">
+      <button type="button" data-mode="overzicht" aria-pressed="true">Overzicht</button>
+      <button type="button" data-mode="cv" aria-pressed="false">CV verwarmen</button>
+      <button type="button" data-mode="tapwater" aria-pressed="false">Tapwater</button>
+      <button type="button" data-mode="defrost" aria-pressed="false">Defrost</button>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 1280 740" role="img" aria-label="Leidingsschema in drie banen">
+        <rect x="228" y="40" width="1032" height="155" fill="var(--band)" />
+        <rect x="228" y="205" width="1032" height="130" fill="var(--band2)" />
+        <rect x="228" y="345" width="500" height="360" fill="var(--band)" />
+        <rect x="740" y="345" width="520" height="360" fill="var(--band2)" />
+
+        <text x="240" y="56" fill="var(--mute)" font-size="11" font-weight="700">AANVOER</text>
+        <text x="240" y="222" fill="var(--mute)" font-size="11" font-weight="700">RETOUR</text>
+        <text x="240" y="362" fill="var(--mute)" font-size="11" font-weight="700">BOILER EN SANITAIR</text>
+        <text x="752" y="362" fill="var(--mute)" font-size="11" font-weight="700">VERWARMING HUIS</text>
+        <text x="56" y="32" fill="var(--mute)" font-size="12" font-weight="700">Buiten</text>
+        <text x="248" y="32" fill="var(--mute)" font-size="12" font-weight="700">Binnen · kelder max. 160 cm</text>
+
+        <rect x="208" y="40" width="16" height="664" fill="var(--fill)" stroke="var(--wall)" />
+
+        <path class="pipe" data-on="cv,dhw,defrost" d="M178 112 H275" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv,defrost" d="M307 112 H415" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv,defrost" d="M415 112 V148" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv" d="M415 112 H640" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv" d="M640 112 H860 V380" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv" d="M860 112 H1100 V380" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="dhw" d="M275 96 V400" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
+
+        <path class="pipe" data-on="cv,dhw,defrost" d="M178 275 H250" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv,dhw,defrost" d="M250 275 H320" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv,defrost" d="M320 275 H348" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv,defrost" d="M382 275 H415" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv,defrost" d="M415 275 V230" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv" d="M415 275 H680" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv" d="M680 275 H900 V490" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv" d="M680 275 H1140 V490" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="dhw" d="M320 500 V275" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="cv,defrost" d="M415 275 H470" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="dhw" d="M270 620 H400" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="dhw" d="M432 620 H500 V500" fill="none" stroke="var(--cold)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="dhw" d="M690 430 H720" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="dhw" d="M720 430 V545" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
+        <path class="pipe" data-on="dhw" d="M720 545 H650" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
+
+        <g>
+          <rect x="28" y="70" width="150" height="140" rx="8" fill="var(--fill)" stroke="var(--line)" />
+          <rect x="48" y="88" width="80" height="70" rx="35" fill="none" stroke="var(--wall)" />
+          <circle cx="88" cy="123" r="14" fill="none" stroke="var(--wall)" />
+          <text x="44" y="178" fill="var(--ink)" font-size="11" font-weight="600">Arctic 12T</text>
+          <text x="44" y="194" fill="var(--mute)" font-size="10">MHC-V12W/D2RN7</text>
+        </g>
+        <g transform="translate(104,58)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">1</text></g>
+
+        <g transform="translate(240,112)">
+          <polygon points="-8,-6 0,0 -8,6" fill="var(--fill)" stroke="var(--line)" />
+          <polygon points="8,-6 0,0 8,6" fill="var(--fill)" stroke="var(--line)" />
+        </g>
+        <g transform="translate(240,275)">
+          <polygon points="-8,-6 0,0 -8,6" fill="var(--fill)" stroke="var(--line)" />
+          <polygon points="8,-6 0,0 8,6" fill="var(--fill)" stroke="var(--line)" />
+        </g>
+
+        <g>
+          <circle cx="275" cy="112" r="16" fill="var(--fill)" stroke="var(--line)" stroke-width="1.6" />
+          <path d="M265 112 H275 V102 M275 112 H285" fill="none" stroke="var(--ink)" stroke-width="2" />
+        </g>
+        <g transform="translate(275,78)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">2</text></g>
+        <text x="252" y="136" fill="var(--mute)" font-size="10">AB</text>
+        <text x="292" y="108" fill="var(--mute)" font-size="10">A</text>
+        <text x="284" y="80" fill="var(--mute)" font-size="10">B</text>
+
+        <circle cx="415" cy="112" r="4.5" fill="var(--ink)" />
+        <g transform="translate(438,96)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">3</text></g>
+
+        <g>
+          <rect x="380" y="148" width="70" height="127" rx="10" fill="var(--fill)" stroke="var(--line)" />
+          <text x="415" y="208" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="600">50 L</text>
+          <text x="415" y="224" text-anchor="middle" fill="var(--mute)" font-size="10">Alps</text>
+        </g>
+        <g transform="translate(470,168)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">4</text></g>
+        <circle cx="415" cy="148" r="5" fill="none" stroke="var(--line)" />
+        <text x="424" y="144" fill="var(--mute)" font-size="9">ontl.</text>
+
+        <g transform="translate(365,275)">
+          <polygon points="-8,-6 0,0 -8,6" fill="var(--fill)" stroke="var(--line)" />
+          <polygon points="8,-6 0,0 8,6" fill="var(--fill)" stroke="var(--line)" />
+        </g>
+        <g transform="translate(365,252)"><circle r="11" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">2.1</text></g>
+        <text x="378" y="268" fill="var(--mute)" font-size="9">SV2</text>
+
+        <circle cx="415" cy="275" r="4.5" fill="var(--ink)" />
+        <g transform="translate(438,298)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">5</text></g>
+        <text x="428" y="312" fill="var(--mute)" font-size="9">8A</text>
+        <circle cx="320" cy="275" r="4.5" fill="var(--ink)" />
+        <g transform="translate(320,298)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">6</text></g>
+        <text x="300" y="312" fill="var(--mute)" font-size="9">8B</text>
+
+        <g>
+          <rect x="252" y="264" width="32" height="22" rx="3" fill="var(--fill)" stroke="var(--line)" />
+          <path d="M260 270 L276 280 M260 280 L272 272" stroke="var(--ink)" stroke-width="1.3" />
+        </g>
+        <g transform="translate(268,252)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">7</text></g>
+        <text x="248" y="298" fill="var(--mute)" font-size="9">filter</text>
+
+        <g>
+          <ellipse cx="490" cy="275" rx="18" ry="24" fill="var(--fill)" stroke="var(--line)" />
+          <line x1="476" y1="275" x2="504" y2="275" stroke="var(--wall)" />
+        </g>
+        <g transform="translate(490,318)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">11</text></g>
+        <text x="468" y="338" fill="var(--mute)" font-size="9">CV-expansie</text>
+        <g transform="translate(560,275)">
+          <polygon points="-8,-6 0,0 -8,6" fill="var(--fill)" stroke="var(--line)" />
+          <polygon points="8,-6 0,0 8,6" fill="var(--fill)" stroke="var(--line)" />
+        </g>
+        <g transform="translate(560,252)"><circle r="11" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">11.1</text></g>
+        <text x="548" y="298" fill="var(--mute)" font-size="9">vul CV</text>
+
+        <circle cx="680" cy="275" r="4.5" fill="var(--ink)" />
+        <g transform="translate(680,252)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">15</text></g>
+        <text x="692" y="270" fill="var(--mute)" font-size="10">huisretour</text>
+        <circle cx="640" cy="112" r="4.5" fill="var(--ink)" />
+        <text x="648" y="102" fill="var(--mute)" font-size="10">T2 · 25 mm</text>
+
+        <g>
+          <rect x="270" y="400" width="420" height="100" rx="14" fill="var(--fill)" stroke="var(--line)" />
+          <path d="M300 450 C320 430 340 470 360 450 S400 430 420 450 S460 470 480 450 S520 430 540 450 S580 470 620 450 S660 430 680 450" fill="none" stroke="var(--coil)" stroke-width="2.2" />
+          <text x="286" y="422" fill="var(--ink)" font-size="12" font-weight="600">NEXT-300H XL-LE1 · A+</text>
+          <text x="286" y="438" fill="var(--mute)" font-size="10">300 L drinkwater in het vat · CV door de spiraal</text>
+        </g>
+        <g transform="translate(300,388)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">8</text></g>
+        <text x="278" y="388" fill="var(--mute)" font-size="10">spiraal in (stand B)</text>
+        <text x="278" y="512" fill="var(--mute)" font-size="10">spiraalretour naar 8B</text>
+
+        <g>
+          <circle cx="270" cy="620" r="14" fill="var(--fill)" stroke="var(--line)" />
+          <text x="270" y="624" text-anchor="middle" fill="var(--ink)" font-size="9" font-weight="600">m³</text>
+        </g>
+        <g transform="translate(270,652)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">10</text></g>
+        <text x="250" y="672" fill="var(--mute)" font-size="10">watermeter</text>
+        <g>
+          <rect x="368" y="606" width="64" height="28" rx="4" fill="var(--fill)" stroke="var(--line)" />
+          <text x="400" y="624" text-anchor="middle" fill="var(--ink)" font-size="10" font-weight="600">inlaatcomb.</text>
+        </g>
+        <g transform="translate(400,652)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">9</text></g>
+        <text x="370" y="688" fill="var(--mute)" font-size="9">drinkwater · niet CV</text>
+        <text x="508" y="575" fill="var(--mute)" font-size="10">koud water de tank in</text>
+        <polygon class="pipe" data-on="dhw" points="500,508 494,522 506,522" fill="var(--cold)" />
+
+        <g>
+          <circle cx="720" cy="430" r="9" fill="var(--fill)" stroke="var(--line)" />
+          <path d="M715 430 H725 M720 425 V435" stroke="var(--ink)" stroke-width="1.4" />
+        </g>
+        <g transform="translate(720,408)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">14</text></g>
+        <text x="732" y="434" fill="var(--mute)" font-size="9">mengkraan</text>
+
+        <g>
+          <rect x="545" y="545" width="150" height="32" rx="4" fill="var(--fill)" stroke="var(--line)" />
+          <text x="553" y="558" fill="var(--ink)" font-size="11" font-weight="600">Douche boven</text>
+          <text x="553" y="570" fill="var(--mute)" font-size="10">16 mm omhoog</text>
+        </g>
+        <g>
+          <rect x="545" y="585" width="150" height="32" rx="4" fill="var(--fill)" stroke="var(--line)" />
+          <text x="553" y="598" fill="var(--ink)" font-size="11" font-weight="600">Keuken</text>
+          <text x="553" y="610" fill="var(--mute)" font-size="10">16 mm</text>
+        </g>
+        <g>
+          <rect x="545" y="625" width="150" height="32" rx="4" fill="var(--fill)" stroke="var(--line)" />
+          <text x="553" y="638" fill="var(--ink)" font-size="11" font-weight="600">Regendouche aanbouw</text>
+          <text x="553" y="650" fill="var(--mute)" font-size="10">16 mm</text>
+        </g>
+
+        <g>
+          <rect x="760" y="380" width="240" height="110" rx="6" fill="var(--fill)" stroke="var(--line)" />
+          <text x="772" y="402" fill="var(--ink)" font-size="12" font-weight="600">12  Hoofd-VV · Tado</text>
+          <text x="772" y="422" fill="var(--mute)" font-size="11">2 pompen in dit blok</text>
+          <text x="772" y="438" fill="var(--mute)" font-size="11">Tado schakelt, ook bij tapwater</text>
+        </g>
+        <g>
+          <circle cx="790" cy="430" r="11" fill="var(--fill)" stroke="var(--line)" />
+          <polygon points="785,424 785,436 798,430" fill="var(--ink)" />
+        </g>
+        <g>
+          <circle cx="790" cy="462" r="11" fill="var(--fill)" stroke="var(--line)" />
+          <polygon points="785,456 785,468 798,462" fill="var(--ink)" />
+        </g>
+        <g>
+          <rect x="1020" y="380" width="230" height="110" rx="6" fill="var(--fill)" stroke="var(--line)" />
+          <text x="1032" y="402" fill="var(--ink)" font-size="12" font-weight="600">13  Oude as</text>
+          <text x="1032" y="422" fill="var(--mute)" font-size="11">zolder 25 mm</text>
+          <text x="1032" y="438" fill="var(--mute)" font-size="11">aanbouw 16 mm VV + radiator</text>
+        </g>
+
+        <text x="40" y="108" fill="var(--hot)" font-size="10">32 mm</text>
+        <text x="40" y="271" fill="var(--cold)" font-size="10">32 mm</text>
+        <text x="284" y="250" fill="var(--mute)" font-size="10">stand B omlaag naar spiraal</text>
+        <text x="848" y="150" fill="var(--mute)" font-size="10">aanvoer omlaag</text>
+        <text x="908" y="268" fill="var(--mute)" font-size="10">retour omhoog</text>
+        <line x1="40" y1="716" x2="74" y2="716" stroke="var(--hot)" stroke-width="3.5" />
+        <text x="82" y="720" fill="var(--ink)" font-size="11">warm</text>
+        <line x1="140" y1="716" x2="174" y2="716" stroke="var(--cold)" stroke-width="3.5" />
+        <text x="182" y="720" fill="var(--ink)" font-size="11">koud / retour</text>
+      </svg>
+    </div>
+    <p class="caption">Rood = warm / aanvoer. Blauw = koud / retour. Nummer 7 is de vuilafscheider op de retour naar de buitenunit. Nummer 15 is het T-stuk waar de twee huisretouren samenkomen.</p>
+
+    <h2>Bevestigd als uitgangspunt</h2>
+    <table>
+      <thead><tr><th>Onderdeel</th><th>Keuze</th></tr></thead>
+      <tbody>
+        <tr><td>Warmtepomp</td><td>Midea Arctic Monoblock 12T MHC-V12W/D2RN7, R290, 3-fase, hydraulisch 1¼ inch</td></tr>
+        <tr><td>Boiler</td><td>NEXT-300H XL-LE1, 300 L drinkwater in het vat, 20 m × 28 mm spiraal, ErP A+, liggend</td></tr>
+        <tr><td>Buffer</td><td>Alps Exclusive AE-00050-BT 50 L, parallel 2-pijps, G 1 inch — geen expansievat</td></tr>
+        <tr><td>Primaire leiding</td><td>32 mm Uponor</td></tr>
+        <tr><td>SV1</td><td>Honeywell VC4013 + 1 inch 3-weg: AB vanaf WP, A = CV, B = boiler. Spanningsloos ≈ tapwater</td></tr>
+        <tr><td>SV2</td><td>Honeywell VC4013 + 1 inch 2-weg tussen 8A en 8B, zelfde 230 V als Midea-verwarmingsstand</td></tr>
+        <tr><td>Expansie CV</td><td>8 L intern in de Midea + Flamco Flexcon 25 L extra op de CV-retour</td></tr>
+        <tr><td>Vuilafscheider</td><td>Flamco Clean Smart, liefst 1¼ inch, op retour naar buitenunit</td></tr>
+        <tr><td>Inlaatcombinatie</td><td>Alleen drinkwater (watermeter → tank). CV vullen via 11.1</td></tr>
+        <tr><td>Mengkraan</td><td>Caleffi Ø22 mm, tank tot 60 °C naar ca. 40 °C naar de kranen</td></tr>
+        <tr><td>Verwarming</td><td>Hoofd-VV met twee vloerpompen (Tado) + oude as (zolder 25 mm, aanbouw 16 mm + radiator)</td></tr>
+        <tr><td>Backup</td><td>Midea 3+6 kW elektrische backup blijft uit</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Onderdelen op de tekening</h2>
+    <table>
+      <thead><tr><th>Nr</th><th>Onderdeel</th><th>Opmerking</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Midea Arctic 12T</td><td>MHC-V12W/D2RN7 · R290 · 3-fase · 1¼ inch · A+++ / A++</td></tr>
+        <tr><td>2</td><td>Driewegklep SV1</td><td>Honeywell VC4013 + 1 inch 3-weg · A = CV, B = boiler</td></tr>
+        <tr><td>2.1</td><td>2-weg SV2</td><td>Tussen 8A en 8B · dicht bij tapwater · Tado-pompen mogen blijven lopen</td></tr>
+        <tr><td>3</td><td>T-stuk 1</td><td>32 × 32 × 25 mm bovenop de buffer</td></tr>
+        <tr><td>4</td><td>Alps 50 L buffer</td><td>AE-00050-BT · parallel · G 1 inch</td></tr>
+        <tr><td>5</td><td>T-stuk 8A</td><td>25 × 32 × 32 mm onderpoort</td></tr>
+        <tr><td>6</td><td>T-stuk 8B</td><td>32 × 32 × 32 mm · boilerspiraal erbij</td></tr>
+        <tr><td>7</td><td>Vuilafscheider</td><td>Flamco Clean Smart 1¼ inch op retour naar buiten</td></tr>
+        <tr><td>8</td><td>NEXT-300H XL-LE1</td><td>Liggend · 300 L drinkwater · 20 m × 28 mm spiraal · ErP A+</td></tr>
+        <tr><td>9</td><td>Inlaatcombinatie</td><td>Alleen drinkwater: watermeter → inlaat → koude kant NEXT. Niet op de CV.</td></tr>
+        <tr><td>10</td><td>Hoofdwatermeter</td><td>25 mm koud uit de muur</td></tr>
+        <tr><td>11</td><td>Expansievat CV 25 L</td><td>Flamco Flexcon op de CV-retour</td></tr>
+        <tr><td>11.1</td><td>CV-vulinrichting</td><td>Apart kraantje om het CV-circuit bij te vullen · niet de inlaatcombinatie</td></tr>
+        <tr><td>12</td><td>Hoofd-VV + Tado</td><td>Twee vloerpompen, Tado schakelt ze</td></tr>
+        <tr><td>13</td><td>Oude CV-as</td><td>Zolder 25 mm · aanbouw 16 mm VV + radiator</td></tr>
+        <tr><td>14</td><td>Mengkraan</td><td>Caleffi 22 mm · 60 °C uit de tank naar ~40 °C naar de kranen</td></tr>
+        <tr><td>15</td><td>T-stuk huisretour</td><td>VV en oude as komen hier samen</td></tr>
+      </tbody>
+    </table>
+
+    <div class="card" style="margin-top:28px">
+      <h2>Graag bevestigen</h2>
+      <p>Kloppen leidingdiameters (32 mm primair, 1 inch kleppen, 1¼ inch vuilafscheider)? Past de liggende 300 L boiler plus 50 L buffer in 160 cm kelderhoogte met aansluitingen bovenop?</p>
+      <p>Is SV2 tussen 8A en 8B de juiste isolatie zodat Tado-pompen tijdens tapwater alleen over de buffer circuleren, zonder dat de 12 kW de huisretour mee trekt?</p>
+      <p>Zijn 25 L extra CV-expansie plus 3 bar-overstort voldoende naast de 8 L in de buitenunit? En is de drinkwater-inlaat (8 bar) duidelijk gescheiden van het CV-vulpunt?</p>
+    </div>
+
+    <footer>Concept ter review · geen bestellinks of interne noten op deze pagina.</footer>
+  </main>
+  <script>
+    const buttons = document.querySelectorAll(".modes button");
+    const pipes = document.querySelectorAll(".pipe");
+    function setMode(mode) {
+      buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === mode)));
+      pipes.forEach((p) => {
+        const on = (p.dataset.on || "").split(",");
+        let active = mode === "overzicht";
+        if (mode === "cv") active = on.includes("cv");
+        if (mode === "tapwater") active = on.includes("dhw");
+        if (mode === "defrost") active = on.includes("defrost") || on.includes("cv");
+        p.style.opacity = active ? "1" : "0.2";
+      });
+    }
+    buttons.forEach((b) => b.addEventListener("click", () => setMode(b.dataset.mode)));
+  </script>
+</body>
+</html>
