@@ -127,9 +127,32 @@
   <main>
     <h1>Koppelingsschema Nijverdal</h1>
     <p class="sub">
-      Kelder max. 160 cm. Geen buffervat. Alu-PEX pers (geen Uponor): 32 mm tot T16, daarna 25 mm.
+      Kelder max. 160 cm. Alu-PEX pers (geen Uponor): 32 mm tot T16, daarna 25 mm.
       Tado-thermostaten op de VV-pompen, draadloos naar de aanstuurunit bij de buitenunit (CN31).
+      Klik op de nummers in de tekening voor uitleg bij dat onderdeel.
     </p>
+
+    <div class="callout warn">
+      <h3>Vraag aan de installateur: buffer en bypass weglaten — klopt dat?</h3>
+      <p>
+        Ik teken expres <strong>geen parallel buffervat</strong> en <strong>geen Δp-bypass</strong>.
+        Is dat voor dit huis in orde, of mis ik iets (minimumdebiet, defrost, garantie)?
+      </p>
+      <p>
+        <strong>Waarom geen buffer.</strong>
+        De Tado-pompen zitten op de verdelers, parallel aan de buitenunit, niet in serie.
+        Bij tapwater zet SV1 poort A dicht; dat isoleert het huis al.
+        Een vat tussen aanvoer en retour zou die circuits kortsluiten.
+        Tijdens tapwater blijven de Tado-pompen lopen, dus zo’n vat zou extra een 2-wegklep vragen.
+        Expansie blijft wel: 8 L in de Midea plus Flexcon 25 L op de retour (geen voorraadvat).
+      </p>
+      <p>
+        <strong>Waarom geen Δp-bypass.</strong>
+        Met de huidige Atag Q38C: ketel aan en VV-pomp uit gaf geen storing, de vloer werd nog warm.
+        De ketelpomp duwt al door de verdeler. Radiatoren nemen ook debiet.
+        Hetzelfde verwacht ik van de pomp in de Midea.
+      </p>
+    </div>
 
     <div class="modes" role="group" aria-label="Bedrijfsstand">
       <button type="button" data-mode="overzicht" aria-pressed="true">Overzicht</button>
@@ -403,7 +426,7 @@
       <h3></h3>
       <p></p>
     </div>
-    <p id="part-hint" class="caption">Klik op een nummer in de tekening.</p>
+    <p id="part-hint" class="caption">Klik op een nummer in de tekening voor uitleg.</p>
     <p class="caption">Rood = aanvoer. Blauw = retour. Groen vast = thermostaat → pomp. Groen stippels = Tado draadloos. Oranje = T5-voeler. Grijze stippellijn 9–11.1 is geen leiding.</p>
 
     <h2>Onderdelen</h2>
