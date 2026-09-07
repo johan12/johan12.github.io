@@ -142,7 +142,9 @@
       <p>Tado-pompen zitten op de verdelers (parallel), niet in serie met de buitenunit. Bij tapwater is poort A van SV1 dicht: de 12 kW gaat alleen door de boilerspiraal, de vloerpompen circuleren lokaal. Δp-bypass (3) houdt minimumdebiet als alle zones dicht staan tijdens CV. Flexcon 25 L blijft als expansie, niet als vat.</p>
     </div>
     <div class="callout">
-      <h3>Leidingen: pers, geen Uponor</h3>
+      <h3>Sturing: Midea + Tado, niet door elkaar</h3>
+      <p>T5-voeler van de Midea in de NEXT-tank. SV1-motor 230 V vanaf de Midea-SV1-klem (geen spanning = CV, spanning = boiler). Tado schakelt alleen de twee vloerpompen. Het oude Tado-ketelrelais mag later op CN31 (ruimtevraag). Tado niet op tapwater, niet op SV1.</p>
+    </div>
       <p>Flexibele meerlagenbuis (Alu-PEX) met perskoppelingen, bijvoorbeeld Henco of Wavin Tigris. 32 mm van de warmtepomp tot T-stuk 16, daarna 25 mm naar de oude hoofdbuis. Zelfde diameters op de retour.</p>
     </div>
     <div class="callout">
@@ -374,7 +376,7 @@
         <tr><td>Δp-bypass</td><td>Caleffi 519 1¼ inch tussen huisaanvoer en huisretour, ná SV1-poort A</td></tr>
         <tr><td>Primaire leiding</td><td>Meerlagenbuis Alu-PEX met perskoppelingen (Henco / Tigris of gelijkwaardig). Geen Uponor. 32 mm tot T16, daarna 25 mm</td></tr>
         <tr><td>T-stukken huis</td><td>2× pers 32×25×25 (aanvoer+retour) en 2× pers 25×25×25 (aanvoer+retour)</td></tr>
-        <tr><td>SV1</td><td>Honeywell VC4013 + 1 inch 3-weg: AB vanaf WP, A = CV, B = boiler. Spanningsloos ≈ tapwater</td></tr>
+        <tr><td>SV1</td><td>Honeywell VC4013 + 1 inch 3-weg, 230 V vanaf Midea-SV1. Geen spanning = CV (A), spanning = boiler (B)</td></tr>
         <tr><td>Expansie CV</td><td>8 L intern in de Midea + Flamco Flexcon 25 L extra op de CV-retour</td></tr>
         <tr><td>Vuilafscheider</td><td>Flamco Clean Smart, liefst 1¼ inch, op retour naar buitenunit</td></tr>
         <tr><td>Inlaatcombinatie</td><td>Alleen drinkwater (watermeter → tank). CV vullen via 11.1</td></tr>
@@ -389,7 +391,7 @@
       <thead><tr><th>Nr</th><th>Onderdeel</th><th>Opmerking</th></tr></thead>
       <tbody>
         <tr><td>1</td><td>Midea Arctic 12T</td><td>MHC-V12W/D2RN7 · R290 · 3-fase · 1¼ inch · A+++ / A++</td></tr>
-        <tr><td>2</td><td>Driewegklep SV1</td><td>Honeywell VC4013 + 1 inch 3-weg · A = CV, B = boiler. Geen tweede klep</td></tr>
+        <tr><td>2</td><td>Driewegklep SV1</td><td>Honeywell VC4013 + 1 inch 3-weg · 230 V vanaf Midea-SV1 · geen spanning = CV</td></tr>
         <tr><td>3</td><td>Δp-bypass</td><td>Caleffi 519 1¼ inch tussen huisaanvoer en -retour, ná SV1-A</td></tr>
         <tr><td>6</td><td>T-stuk spiraalretour</td><td>Pers 32 mm · boilerspiraal-retour bij de huisretour, vóór het filter</td></tr>
         <tr><td>7</td><td>Vuilafscheider</td><td>Flamco Clean Smart 1¼ inch op retour naar buiten</td></tr>
@@ -419,7 +421,7 @@
   <script>
     const PARTS = {
       "1": ["Midea Arctic 12T", "MHC-V12W/D2RN7 · R290 · 3-fase · hydraulisch 1¼ inch · A+++ / A++. Interne expansie 8 L. Backup 3+6 kW blijft uit."],
-      "2": ["Driewegklep SV1", "Honeywell VC4013 + 1 inch 3-weg. AB vanaf de warmtepomp, A = CV, B = boiler. Spanningsloos ≈ tapwater (poort A dicht). Geen tweede klep."],
+      "2": ["Driewegklep SV1", "Honeywell VC4013 + 1 inch 3-weg, 230 V vanaf de Midea-SV1-uitgang (niet Tado). Geen spanning = poort A = CV. Spanning = poort B = boiler."],
       "3": ["Δp-bypass", "Caleffi 519 1¼ inch tussen huisaanvoer en huisretour, ná SV1-poort A. Springt open als Tado-pompen uit zijn en radiatorafsluiters dicht: minimumdebiet voor de buitenunit. Geen motor, geen vat."],
       "6": ["T-stuk spiraalretour", "Pers 32 mm. Hier komt de boilerspiraal-retour bij de huisretour, vóór de vuilafscheider."],
       "7": ["Vuilafscheider", "Flamco Clean Smart, liefst 1¼ inch, op de retour naar de buitenunit."],
