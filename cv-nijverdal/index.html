@@ -128,7 +128,7 @@
     <h1>Koppelingsschema Nijverdal</h1>
     <p class="sub">
       Kelder max. 160 cm. Geen buffervat. Alu-PEX pers (geen Uponor): 32 mm tot T16, daarna 25 mm.
-      Tado-pompen op de verdelers. T5 in de tank, SV1 vanaf de Midea. Tado-ketelrelais naar CN31.
+      Tado-thermostaten op de VV-pompen, draadloos naar de aanstuurunit bij de buitenunit (CN31).
     </p>
 
     <div class="modes" role="group" aria-label="Bedrijfsstand">
@@ -155,9 +155,11 @@
 
         <path d="M400 634 V700 H748 V368 H560 V292" fill="none" stroke="var(--wall)" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="round" pointer-events="none" />
         <path d="M480 492 V528 H50 V210" fill="none" stroke="var(--coil)" stroke-width="2" stroke-dasharray="3 3" stroke-linecap="round" pointer-events="none" />
-        <path d="M890 657 V752 H150 V210" fill="none" stroke="var(--tado)" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round" pointer-events="none" />
-        <path d="M870 605 V452" fill="none" stroke="var(--tado)" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round" pointer-events="none" />
-        <path d="M1240 752 V470" fill="none" stroke="var(--tado)" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round" pointer-events="none" />
+        <path d="M825 526 V752 H100 V268" fill="none" stroke="var(--tado)" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round" pointer-events="none" />
+        <path d="M1205 526 V752 H825" fill="none" stroke="var(--tado)" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round" pointer-events="none" />
+        <path d="M825 508 V452 H870" fill="none" stroke="var(--tado)" stroke-width="2.2" stroke-linecap="round" pointer-events="none" />
+        <path d="M1205 508 V470 H1240" fill="none" stroke="var(--tado)" stroke-width="2.2" stroke-linecap="round" pointer-events="none" />
+        <path d="M103 218 V210" fill="none" stroke="var(--tado)" stroke-width="2.2" stroke-linecap="round" pointer-events="none" />
 
         <path class="pipe" data-on="cv,dhw,defrost" d="M178 112 H275" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
         <path class="pipe" data-on="cv" d="M307 112 H820" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
@@ -306,12 +308,18 @@
           <rect x="755" y="400" width="140" height="100" rx="6" fill="var(--fill)" stroke="var(--line)" />
           <text x="767" y="422" fill="var(--ink)" font-size="12" font-weight="600">12  VV woning</text>
           <text x="767" y="442" fill="var(--mute)" font-size="11">van boven</text>
-          <text x="767" y="458" fill="var(--mute)" font-size="11">pomp Tado</text>
         </g>
         <g>
           <circle cx="870" cy="452" r="11" fill="var(--fill)" stroke="var(--line)" />
           <polygon points="865,446 865,458 878,452" fill="var(--ink)" />
         </g>
+        <g class="hit" data-part="19">
+          <rect x="770" y="508" width="110" height="36" rx="6" fill="var(--fill)" stroke="var(--line)" />
+          <circle cx="786" cy="526" r="8" fill="none" stroke="var(--ink)" stroke-width="1.4" />
+          <circle cx="786" cy="526" r="2" fill="var(--ink)" />
+          <text x="800" y="530" fill="var(--ink)" font-size="10" font-weight="600">19  Thermostaat</text>
+        </g>
+        <g class="num" data-part="19" transform="translate(760,508)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">19</text></g>
         <g class="hit" data-part="13">
           <rect x="910" y="400" width="115" height="88" rx="6" fill="var(--fill)" stroke="var(--line)" />
           <text x="920" y="418" fill="var(--ink)" font-size="11" font-weight="600">13  Radiator 1</text>
@@ -338,21 +346,27 @@
           <rect x="1145" y="400" width="120" height="100" rx="6" fill="var(--fill)" stroke="var(--line)" />
           <text x="1157" y="422" fill="var(--ink)" font-size="12" font-weight="600">13.1  Aanbouw</text>
           <text x="1157" y="442" fill="var(--mute)" font-size="11">VV + radiator</text>
-          <text x="1157" y="458" fill="var(--mute)" font-size="11">pomp Tado</text>
         </g>
         <g>
           <circle cx="1240" cy="470" r="11" fill="var(--fill)" stroke="var(--line)" />
           <polygon points="1235,464 1235,476 1248,470" fill="var(--ink)" />
         </g>
-        <g class="hit" data-part="18">
-          <rect x="755" y="605" width="280" height="52" rx="6" fill="var(--fill)" stroke="var(--line)" />
-          <text x="767" y="627" fill="var(--ink)" font-size="12" font-weight="600">18  Aanstuurunit CV</text>
-          <text x="767" y="645" fill="var(--mute)" font-size="11">Tado-ketelrelais → CN31</text>
+        <g class="hit" data-part="19.1">
+          <rect x="1150" y="508" width="110" height="36" rx="6" fill="var(--fill)" stroke="var(--line)" />
+          <circle cx="1166" cy="526" r="8" fill="none" stroke="var(--ink)" stroke-width="1.4" />
+          <circle cx="1166" cy="526" r="2" fill="var(--ink)" />
+          <text x="1180" y="530" fill="var(--ink)" font-size="10" font-weight="600">19.1  Thermostaat</text>
         </g>
-        <g class="num" data-part="18" transform="translate(745,605)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">18</text></g>
+        <g class="num" data-part="19.1" transform="translate(1140,508)"><circle r="11" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">19.1</text></g>
+        <g class="hit" data-part="18">
+          <rect x="28" y="218" width="150" height="50" rx="6" fill="var(--fill)" stroke="var(--line)" />
+          <text x="40" y="238" fill="var(--ink)" font-size="12" font-weight="600">18  Aanstuurunit</text>
+          <text x="40" y="254" fill="var(--mute)" font-size="11">draadloos · CN31</text>
+        </g>
+        <g class="num" data-part="18" transform="translate(18,218)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">18</text></g>
 
         <g><rect x="37" y="97" width="62" height="14" rx="2" fill="var(--paper)" /><text x="40" y="108" fill="var(--hot)" font-size="10">32 mm pers</text></g>
-        <g><rect x="37" y="260" width="62" height="14" rx="2" fill="var(--paper)" /><text x="40" y="271" fill="var(--cold)" font-size="10">32 mm pers</text></g>
+        <g><rect x="37" y="281" width="62" height="14" rx="2" fill="var(--paper)" /><text x="40" y="292" fill="var(--cold)" font-size="10">32 mm pers</text></g>
         <g><rect x="233" y="125" width="24" height="14" rx="2" fill="var(--paper)" /><text x="236" y="136" fill="var(--mute)" font-size="10">AB</text></g>
         <g><rect x="297" y="97" width="16" height="14" rx="2" fill="var(--paper)" /><text x="300" y="108" fill="var(--mute)" font-size="10">A</text></g>
         <g><rect x="283" y="157" width="16" height="14" rx="2" fill="var(--paper)" /><text x="286" y="168" fill="var(--mute)" font-size="10">B</text></g>
@@ -370,8 +384,7 @@
         <g><rect x="365" y="677" width="118" height="14" rx="2" fill="var(--paper)" /><text x="368" y="688" fill="var(--mute)" font-size="10">drinkwater · niet CV</text></g>
         <g><rect x="505" y="564" width="128" height="14" rx="2" fill="var(--paper)" /><text x="508" y="575" fill="var(--mute)" font-size="10">koud water de tank in</text></g>
         <g><rect x="645" y="407" width="62" height="14" rx="2" fill="var(--paper)" /><text x="648" y="418" fill="var(--mute)" font-size="10">mengkraan</text></g>
-        <g><rect x="37" y="217" width="62" height="14" rx="2" fill="var(--paper)" /><text x="40" y="228" fill="var(--coil)" font-size="10">T5 → CN13</text></g>
-        <g><rect x="115" y="217" width="62" height="14" rx="2" fill="var(--paper)" /><text x="118" y="228" fill="var(--tado)" font-size="10">CN31 Tado</text></g>
+        <g><rect x="37" y="173" width="62" height="14" rx="2" fill="var(--paper)" /><text x="40" y="184" fill="var(--coil)" font-size="10">T5 → CN13</text></g>
         <g><rect x="847" y="139" width="72" height="14" rx="2" fill="var(--paper)" /><text x="850" y="150" fill="var(--mute)" font-size="10">25 mm pers</text></g>
         <g><rect x="937" y="257" width="72" height="14" rx="2" fill="var(--paper)" /><text x="940" y="268" fill="var(--mute)" font-size="10">25 mm pers</text></g>
         <line x1="40" y1="776" x2="74" y2="776" stroke="var(--hot)" stroke-width="3.5" />
@@ -381,7 +394,7 @@
         <line x1="280" y1="776" x2="314" y2="776" stroke="var(--coil)" stroke-width="2" stroke-dasharray="3 3" />
         <text x="322" y="780" fill="var(--ink)" font-size="11">T5-voeler</text>
         <line x1="400" y1="776" x2="434" y2="776" stroke="var(--tado)" stroke-width="2" stroke-dasharray="4 3" />
-        <text x="442" y="780" fill="var(--ink)" font-size="11">Tado</text>
+        <text x="442" y="780" fill="var(--ink)" font-size="11">Tado draadloos</text>
         <line x1="500" y1="776" x2="534" y2="776" stroke="var(--wall)" stroke-width="1.4" stroke-dasharray="5 4" />
         <text x="542" y="780" fill="var(--ink)" font-size="11">geen leiding</text>
       </svg>
@@ -391,7 +404,7 @@
       <p></p>
     </div>
     <p id="part-hint" class="caption">Klik op een nummer in de tekening.</p>
-    <p class="caption">Rood = aanvoer. Blauw = retour. Oranje streepjes = T5-voeler. Groen = Tado. Grijze stippellijn 9–11.1 is geen leiding.</p>
+    <p class="caption">Rood = aanvoer. Blauw = retour. Groen vast = thermostaat → pomp. Groen stippels = Tado draadloos. Oranje = T5-voeler. Grijze stippellijn 9–11.1 is geen leiding.</p>
 
     <h2>Onderdelen</h2>
     <table>
@@ -407,14 +420,16 @@
         <tr><td>10</td><td>Watermeter</td><td>25 mm koud naar de inlaatcombinatie</td></tr>
         <tr><td>11</td><td>Flexcon 25 L</td><td>CV-expansie op de retour (geen buffer)</td></tr>
         <tr><td>11.1</td><td>CV-vulpunt</td><td>Op de retour, niet via de inlaatcombinatie</td></tr>
-        <tr><td>12</td><td>VV hoofdwoning</td><td>Pomp op de verdeler, Tado. Aanvoer en retour van boven</td></tr>
+        <tr><td>12</td><td>VV hoofdwoning</td><td>Pomp op de verdeler. Thermostaat 19 schakelt de pomp</td></tr>
         <tr><td>13</td><td>Radiator 1</td><td>Links vanaf T17, eigen groep</td></tr>
         <tr><td>13.2</td><td>Radiator 2</td><td>Tweede radiatorgroep, splitsing ná T17</td></tr>
-        <tr><td>13.1</td><td>VV + radiator aanbouw</td><td>Rechts vanaf T17, pomp op de verdeler</td></tr>
+        <tr><td>13.1</td><td>VV + radiator aanbouw</td><td>Rechts vanaf T17. Thermostaat 19.1 schakelt de pomp</td></tr>
         <tr><td>14</td><td>Mengkraan</td><td>Caleffi 22 mm · ~40 °C naar de kranen</td></tr>
         <tr><td>16</td><td>T 32×25×25 pers</td><td>2× · 32 mm in, 25 mm omlaag naar VV woning, 25 mm door naar T17</td></tr>
         <tr><td>17</td><td>T 25×25×25 pers</td><td>2× · omlaag links 2 radiatoren, door rechts aanbouw</td></tr>
-        <tr><td>18</td><td>Aanstuurunit CV</td><td>Tado-ketelrelais → CN31 HT–COM. Pompen apart. Niet SV1, niet T5</td></tr>
+        <tr><td>18</td><td>Aanstuurunit CV</td><td>Bij de buitenunit. Draadloos van de thermostaten. Relais → CN31 HT–COM</td></tr>
+        <tr><td>19</td><td>Thermostaat woning</td><td>Direct op VV 12 (pomp). Stippellijn draadloos naar 18</td></tr>
+        <tr><td>19.1</td><td>Thermostaat aanbouw</td><td>Direct op VV 13.1 (pomp). Stippellijn draadloos naar 18</td></tr>
       </tbody>
     </table>
   </main>
@@ -430,14 +445,16 @@
       "10": ["Watermeter", "25 mm koud naar de inlaatcombinatie"],
       "11": ["Flexcon 25 L", "CV-expansie op de retour (geen buffer)"],
       "11.1": ["CV-vulpunt", "Op de retour, niet via de inlaatcombinatie"],
-      "12": ["VV hoofdwoning", "Pomp op de verdeler, Tado. Aanvoer en retour van boven"],
+      "12": ["VV hoofdwoning", "Pomp op de verdeler. Thermostaat 19 schakelt de pomp"],
       "13": ["Radiator 1", "Links vanaf T17, eigen groep"],
       "13.2": ["Radiator 2", "Tweede radiatorgroep, splitsing ná T17"],
-      "13.1": ["VV + radiator aanbouw", "Rechts vanaf T17, pomp op de verdeler"],
+      "13.1": ["VV + radiator aanbouw", "Rechts vanaf T17. Thermostaat 19.1 schakelt de pomp"],
       "14": ["Mengkraan", "Caleffi 22 mm · ~40 °C naar de kranen"],
       "16": ["T 32×25×25 pers", "2× · 32 mm in, 25 mm omlaag naar VV woning, 25 mm door naar T17"],
       "17": ["T 25×25×25 pers", "2× · omlaag links 2 radiatoren, door rechts aanbouw"],
-      "18": ["Aanstuurunit CV", "Tado-ketelrelais → CN31 HT–COM. Pompen apart. Niet SV1, niet T5"]
+      "18": ["Aanstuurunit CV", "Bij de buitenunit. Draadloos van de thermostaten. Relais → CN31 HT–COM"],
+      "19": ["Thermostaat woning", "Direct op VV 12 (pomp). Stippellijn draadloos naar 18"],
+      "19.1": ["Thermostaat aanbouw", "Direct op VV 13.1 (pomp). Stippellijn draadloos naar 18"]
     };
     const buttons = document.querySelectorAll(".modes button");
     const pipes = document.querySelectorAll(".pipe");
