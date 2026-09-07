@@ -83,6 +83,8 @@
       overflow: auto;
     }
     svg { display: block; min-width: 920px; width: 100%; }
+    .num, .hit { cursor: pointer; }
+    .num.is-on circle { fill: #175cd3; }
     .caption { color: var(--mute); font-size: 13px; margin-top: 8px; }
     table {
       width: 100%;
@@ -191,14 +193,14 @@
         <path class="pipe" data-on="dhw" d="M720 430 V545" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
         <path class="pipe" data-on="dhw" d="M720 545 H650" fill="none" stroke="var(--hot)" stroke-width="3.5" stroke-linecap="round" />
 
-        <g>
+        <g class="hit" data-part="1">
           <rect x="28" y="70" width="150" height="140" rx="8" fill="var(--fill)" stroke="var(--line)" />
           <rect x="48" y="88" width="80" height="70" rx="35" fill="none" stroke="var(--wall)" />
           <circle cx="88" cy="123" r="14" fill="none" stroke="var(--wall)" />
           <text x="44" y="178" fill="var(--ink)" font-size="11" font-weight="600">Arctic 12T</text>
           <text x="44" y="194" fill="var(--mute)" font-size="10">MHC-V12W/D2RN7</text>
         </g>
-        <g transform="translate(104,58)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">1</text></g>
+        <g class="num" data-part="1" transform="translate(104,58)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">1</text></g>
 
         <g transform="translate(240,112)">
           <polygon points="-8,-6 0,0 -8,6" fill="var(--fill)" stroke="var(--line)" />
@@ -209,98 +211,80 @@
           <polygon points="8,-6 0,0 8,6" fill="var(--fill)" stroke="var(--line)" />
         </g>
 
-        <g>
+        <g class="hit" data-part="2">
           <circle cx="275" cy="112" r="16" fill="var(--fill)" stroke="var(--line)" stroke-width="1.6" />
           <path d="M265 112 H275 V102 M275 112 H285" fill="none" stroke="var(--ink)" stroke-width="2" />
         </g>
-        <g transform="translate(275,78)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">2</text></g>
-        <text x="252" y="136" fill="var(--mute)" font-size="10">AB</text>
-        <text x="292" y="108" fill="var(--mute)" font-size="10">A</text>
-        <text x="284" y="80" fill="var(--mute)" font-size="10">B</text>
+        <g class="num" data-part="2" transform="translate(248,78)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">2</text></g>
 
         <circle cx="415" cy="112" r="4.5" fill="var(--ink)" />
-        <g transform="translate(438,96)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">3</text></g>
+        <g class="num" data-part="3" transform="translate(448,92)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">3</text></g>
 
-        <g>
+        <g class="hit" data-part="4">
           <rect x="380" y="148" width="70" height="127" rx="10" fill="var(--fill)" stroke="var(--line)" />
           <text x="415" y="208" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="600">50 L</text>
           <text x="415" y="224" text-anchor="middle" fill="var(--mute)" font-size="10">Alps</text>
         </g>
-        <g transform="translate(470,168)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">4</text></g>
+        <g class="num" data-part="4" transform="translate(478,168)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">4</text></g>
         <circle cx="415" cy="148" r="5" fill="none" stroke="var(--line)" />
-        <text x="424" y="144" fill="var(--mute)" font-size="9">ontl.</text>
 
-        <g transform="translate(365,275)">
+        <g class="hit" data-part="2.1" transform="translate(365,275)">
           <polygon points="-8,-6 0,0 -8,6" fill="var(--fill)" stroke="var(--line)" />
           <polygon points="8,-6 0,0 8,6" fill="var(--fill)" stroke="var(--line)" />
         </g>
-        <g transform="translate(365,252)"><circle r="11" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">2.1</text></g>
-        <text x="378" y="268" fill="var(--mute)" font-size="9">SV2</text>
+        <g class="num" data-part="2.1" transform="translate(365,236)"><circle r="11" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">2.1</text></g>
 
         <circle cx="415" cy="275" r="4.5" fill="var(--ink)" />
-        <g transform="translate(438,298)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">5</text></g>
-        <text x="428" y="312" fill="var(--mute)" font-size="9">8A</text>
+        <g class="num" data-part="5" transform="translate(438,306)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">5</text></g>
         <circle cx="320" cy="275" r="4.5" fill="var(--ink)" />
-        <g transform="translate(320,298)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">6</text></g>
-        <text x="300" y="312" fill="var(--mute)" font-size="9">8B</text>
+        <g class="num" data-part="6" transform="translate(320,306)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">6</text></g>
 
-        <g>
+        <g class="hit" data-part="7">
           <rect x="252" y="264" width="32" height="22" rx="3" fill="var(--fill)" stroke="var(--line)" />
           <path d="M260 270 L276 280 M260 280 L272 272" stroke="var(--ink)" stroke-width="1.3" />
         </g>
-        <g transform="translate(268,252)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">7</text></g>
-        <text x="248" y="298" fill="var(--mute)" font-size="9">filter</text>
+        <g class="num" data-part="7" transform="translate(248,236)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">7</text></g>
 
-        <g>
+        <g class="hit" data-part="11">
           <ellipse cx="490" cy="275" rx="18" ry="24" fill="var(--fill)" stroke="var(--line)" />
           <line x1="476" y1="275" x2="504" y2="275" stroke="var(--wall)" />
         </g>
-        <g transform="translate(490,318)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">11</text></g>
-        <text x="468" y="338" fill="var(--mute)" font-size="9">CV-expansie</text>
-        <g transform="translate(560,275)">
+        <g class="num" data-part="11" transform="translate(490,236)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">11</text></g>
+        <g class="hit" data-part="11.1" transform="translate(560,275)">
           <polygon points="-8,-6 0,0 -8,6" fill="var(--fill)" stroke="var(--line)" />
           <polygon points="8,-6 0,0 8,6" fill="var(--fill)" stroke="var(--line)" />
         </g>
-        <g transform="translate(560,252)"><circle r="11" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">11.1</text></g>
-        <text x="548" y="298" fill="var(--mute)" font-size="9">vul CV</text>
+        <g class="num" data-part="11.1" transform="translate(590,252)"><circle r="11" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">11.1</text></g>
 
         <circle cx="680" cy="275" r="4.5" fill="var(--ink)" />
-        <g transform="translate(680,252)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">15</text></g>
-        <text x="692" y="270" fill="var(--mute)" font-size="10">huisretour</text>
+        <g class="num" data-part="15" transform="translate(680,236)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">15</text></g>
         <circle cx="640" cy="112" r="4.5" fill="var(--ink)" />
-        <text x="648" y="102" fill="var(--mute)" font-size="10">T2 · 25 mm</text>
 
-        <g>
+        <g class="hit" data-part="8">
           <rect x="270" y="400" width="420" height="100" rx="14" fill="var(--fill)" stroke="var(--line)" />
           <path d="M300 450 C320 430 340 470 360 450 S400 430 420 450 S460 470 480 450 S520 430 540 450 S580 470 620 450 S660 430 680 450" fill="none" stroke="var(--coil)" stroke-width="2.2" />
           <text x="286" y="422" fill="var(--ink)" font-size="12" font-weight="600">NEXT-300H XL-LE1 · A+</text>
           <text x="286" y="438" fill="var(--mute)" font-size="10">300 L drinkwater in het vat · CV door de spiraal</text>
         </g>
-        <g transform="translate(300,388)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">8</text></g>
-        <text x="278" y="388" fill="var(--mute)" font-size="10">spiraal in (stand B)</text>
-        <text x="278" y="512" fill="var(--mute)" font-size="10">spiraalretour naar 8B</text>
+        <g class="num" data-part="8" transform="translate(252,420)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">8</text></g>
 
-        <g>
+        <g class="hit" data-part="10">
           <circle cx="270" cy="620" r="14" fill="var(--fill)" stroke="var(--line)" />
           <text x="270" y="624" text-anchor="middle" fill="var(--ink)" font-size="9" font-weight="600">m³</text>
         </g>
-        <g transform="translate(270,652)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">10</text></g>
-        <text x="250" y="672" fill="var(--mute)" font-size="10">watermeter</text>
-        <g>
+        <g class="num" data-part="10" transform="translate(270,656)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">10</text></g>
+        <g class="hit" data-part="9">
           <rect x="368" y="606" width="64" height="28" rx="4" fill="var(--fill)" stroke="var(--line)" />
           <text x="400" y="624" text-anchor="middle" fill="var(--ink)" font-size="10" font-weight="600">inlaatcomb.</text>
         </g>
-        <g transform="translate(400,652)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">9</text></g>
-        <text x="370" y="688" fill="var(--mute)" font-size="9">drinkwater · niet CV</text>
-        <text x="508" y="575" fill="var(--mute)" font-size="10">koud water de tank in</text>
+        <g class="num" data-part="9" transform="translate(400,656)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">9</text></g>
         <polygon class="pipe" data-on="dhw" points="500,508 494,522 506,522" fill="var(--cold)" />
 
-        <g>
+        <g class="hit" data-part="14">
           <circle cx="720" cy="430" r="9" fill="var(--fill)" stroke="var(--line)" />
           <path d="M715 430 H725 M720 425 V435" stroke="var(--ink)" stroke-width="1.4" />
         </g>
-        <g transform="translate(720,408)"><circle r="9" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">14</text></g>
-        <text x="732" y="434" fill="var(--mute)" font-size="9">mengkraan</text>
+        <g class="num" data-part="14" transform="translate(720,400)"><circle r="10" fill="var(--ink)" /><text y="3.5" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">14</text></g>
 
         <g>
           <rect x="545" y="545" width="150" height="32" rx="4" fill="var(--fill)" stroke="var(--line)" />
@@ -318,39 +302,63 @@
           <text x="553" y="650" fill="var(--mute)" font-size="10">16 mm</text>
         </g>
 
-        <g>
+        <g class="hit" data-part="12">
           <rect x="760" y="380" width="240" height="110" rx="6" fill="var(--fill)" stroke="var(--line)" />
           <text x="772" y="402" fill="var(--ink)" font-size="12" font-weight="600">12  Hoofd-VV · Tado</text>
           <text x="772" y="422" fill="var(--mute)" font-size="11">2 pompen in dit blok</text>
           <text x="772" y="438" fill="var(--mute)" font-size="11">Tado schakelt, ook bij tapwater</text>
         </g>
         <g>
-          <circle cx="790" cy="430" r="11" fill="var(--fill)" stroke="var(--line)" />
-          <polygon points="785,424 785,436 798,430" fill="var(--ink)" />
+          <circle cx="968" cy="430" r="11" fill="var(--fill)" stroke="var(--line)" />
+          <polygon points="963,424 963,436 976,430" fill="var(--ink)" />
         </g>
         <g>
-          <circle cx="790" cy="462" r="11" fill="var(--fill)" stroke="var(--line)" />
-          <polygon points="785,456 785,468 798,462" fill="var(--ink)" />
+          <circle cx="968" cy="462" r="11" fill="var(--fill)" stroke="var(--line)" />
+          <polygon points="963,456 963,468 976,462" fill="var(--ink)" />
         </g>
-        <g>
+        <g class="hit" data-part="13">
           <rect x="1020" y="380" width="230" height="110" rx="6" fill="var(--fill)" stroke="var(--line)" />
           <text x="1032" y="402" fill="var(--ink)" font-size="12" font-weight="600">13  Oude as</text>
           <text x="1032" y="422" fill="var(--mute)" font-size="11">zolder 25 mm</text>
           <text x="1032" y="438" fill="var(--mute)" font-size="11">aanbouw 16 mm VV + radiator</text>
         </g>
 
-        <text x="40" y="108" fill="var(--hot)" font-size="10">32 mm</text>
-        <text x="40" y="271" fill="var(--cold)" font-size="10">32 mm</text>
-        <text x="284" y="250" fill="var(--mute)" font-size="10">stand B omlaag naar spiraal</text>
-        <text x="848" y="150" fill="var(--mute)" font-size="10">aanvoer omlaag</text>
-        <text x="908" y="268" fill="var(--mute)" font-size="10">retour omhoog</text>
+        <path d="M400 606 H236 V348 H560 V290" fill="none" stroke="var(--wall)" stroke-width="1.6" stroke-dasharray="5 4" stroke-linecap="round" />
+        <g><rect x="37" y="97" width="40" height="14" rx="2" fill="var(--paper)" /><text x="40" y="108" fill="var(--hot)" font-size="10">32 mm</text></g>
+        <g><rect x="37" y="260" width="40" height="14" rx="2" fill="var(--paper)" /><text x="40" y="271" fill="var(--cold)" font-size="10">32 mm</text></g>
+        <g><rect x="233" y="125" width="24" height="14" rx="2" fill="var(--paper)" /><text x="236" y="136" fill="var(--mute)" font-size="10">AB</text></g>
+        <g><rect x="297" y="97" width="16" height="14" rx="2" fill="var(--paper)" /><text x="300" y="108" fill="var(--mute)" font-size="10">A</text></g>
+        <g><rect x="283" y="157" width="16" height="14" rx="2" fill="var(--paper)" /><text x="286" y="168" fill="var(--mute)" font-size="10">B</text></g>
+        <g><rect x="233" y="349" width="118" height="14" rx="2" fill="var(--paper)" /><text x="236" y="360" fill="var(--mute)" font-size="10">stand B naar spiraal</text></g>
+        <g><rect x="427" y="127" width="32" height="14" rx="2" fill="var(--paper)" /><text x="430" y="138" fill="var(--mute)" font-size="10">ontl.</text></g>
+        <g><rect x="379" y="257" width="28" height="14" rx="2" fill="var(--paper)" /><text x="382" y="268" fill="var(--mute)" font-size="10">SV2</text></g>
+        <g><rect x="425" y="317" width="22" height="14" rx="2" fill="var(--paper)" /><text x="428" y="328" fill="var(--mute)" font-size="10">8A</text></g>
+        <g><rect x="301" y="317" width="22" height="14" rx="2" fill="var(--paper)" /><text x="304" y="328" fill="var(--mute)" font-size="10">8B</text></g>
+        <g><rect x="241" y="287" width="36" height="14" rx="2" fill="var(--paper)" /><text x="244" y="298" fill="var(--mute)" font-size="10">filter</text></g>
+        <g><rect x="455" y="307" width="72" height="14" rx="2" fill="var(--paper)" /><text x="458" y="318" fill="var(--mute)" font-size="10">CV-expansie</text></g>
+        <g><rect x="545" y="293" width="42" height="14" rx="2" fill="var(--paper)" /><text x="548" y="304" fill="var(--mute)" font-size="10">vul CV</text></g>
+        <g><rect x="695" y="257" width="62" height="14" rx="2" fill="var(--paper)" /><text x="698" y="268" fill="var(--mute)" font-size="10">huisretour</text></g>
+        <g><rect x="645" y="87" width="72" height="14" rx="2" fill="var(--paper)" /><text x="648" y="98" fill="var(--mute)" font-size="10">T2 · 25 mm</text></g>
+        <g><rect x="275" y="507" width="128" height="14" rx="2" fill="var(--paper)" /><text x="278" y="518" fill="var(--mute)" font-size="10">spiraalretour naar 8B</text></g>
+        <g><rect x="245" y="667" width="62" height="14" rx="2" fill="var(--paper)" /><text x="248" y="678" fill="var(--mute)" font-size="10">watermeter</text></g>
+        <g><rect x="365" y="677" width="118" height="14" rx="2" fill="var(--paper)" /><text x="368" y="688" fill="var(--mute)" font-size="10">drinkwater · niet CV</text></g>
+        <g><rect x="505" y="564" width="128" height="14" rx="2" fill="var(--paper)" /><text x="508" y="575" fill="var(--mute)" font-size="10">koud water de tank in</text></g>
+        <g><rect x="733" y="437" width="62" height="14" rx="2" fill="var(--paper)" /><text x="736" y="448" fill="var(--mute)" font-size="10">mengkraan</text></g>
+        <g><rect x="245" y="331" width="128" height="14" rx="2" fill="var(--paper)" /><text x="248" y="342" fill="var(--mute)" font-size="10">stippellijn: geen leiding</text></g>
+        <g><rect x="845" y="139" width="82" height="14" rx="2" fill="var(--paper)" /><text x="848" y="150" fill="var(--mute)" font-size="10">aanvoer omlaag</text></g>
+        <g><rect x="905" y="257" width="82" height="14" rx="2" fill="var(--paper)" /><text x="908" y="268" fill="var(--mute)" font-size="10">retour omhoog</text></g>
         <line x1="40" y1="716" x2="74" y2="716" stroke="var(--hot)" stroke-width="3.5" />
         <text x="82" y="720" fill="var(--ink)" font-size="11">warm</text>
         <line x1="140" y1="716" x2="174" y2="716" stroke="var(--cold)" stroke-width="3.5" />
         <text x="182" y="720" fill="var(--ink)" font-size="11">koud / retour</text>
       </svg>
     </div>
-    <p class="caption">Rood = warm / aanvoer. Blauw = koud / retour. Nummer 7 is de vuilafscheider op de retour naar de buitenunit. Nummer 15 is het T-stuk waar de twee huisretouren samenkomen.</p>
+    <div id="part-info" class="callout" hidden>
+      <h3></h3>
+      <p></p>
+    </div>
+    <p id="part-hint" class="caption">Klik op een nummer in de tekening voor toelichting.</p>
+    <p class="caption">Rood = warm / aanvoer. Blauw = koud / retour. Het stippellijntje tussen 9 en 11.1 is geen leiding: inlaatcombinatie en CV-vulpunt zijn twee gescheiden dingen.</p>
 
     <h2>Bevestigd als uitgangspunt</h2>
     <table>
@@ -405,8 +413,30 @@
     <footer>Concept ter review · geen bestellinks of interne noten op deze pagina.</footer>
   </main>
   <script>
+    const PARTS = {
+      "1": ["Midea Arctic 12T", "MHC-V12W/D2RN7 · R290 · 3-fase · hydraulisch 1¼ inch · A+++ / A++. Interne expansie 8 L. Backup 3+6 kW blijft uit."],
+      "2": ["Driewegklep SV1", "Honeywell VC4013 + 1 inch 3-weg. AB vanaf de warmtepomp, A = CV, B = boiler. Spanningsloos ≈ tapwater (poort A dicht)."],
+      "2.1": ["2-weg SV2", "Honeywell VC4013 + 1 inch 2-weg tussen 8A en 8B. Dicht bij tapwater, open bij CV. Tado-pompen mogen blijven lopen: ze circuleren dan alleen over de 50 L buffer."],
+      "3": ["T-stuk 1", "32 × 32 × 25 mm bovenop de buffer. 32 mm primair, 25 mm naar het vat."],
+      "4": ["Alps 50 L buffer", "AE-00050-BT, parallel 2-pijps, G 1 inch. Geen expansievat. Bij tapwater het enige circuit voor de Tado-pompen."],
+      "5": ["T-stuk 8A", "25 × 32 × 32 mm op de onderpoort van de buffer. SV2 zit tussen 8A en 8B."],
+      "6": ["T-stuk 8B", "32 × 32 × 32 mm. Hier komt de boilerspiraal-retour bij de huisretour."],
+      "7": ["Vuilafscheider", "Flamco Clean Smart, liefst 1¼ inch, op de retour naar de buitenunit."],
+      "8": ["NEXT-300H XL-LE1", "Liggend, 300 L drinkwater in het vat, 20 m × 28 mm spiraal, ErP A+. CV gaat alleen door de spiraal, niet door het vatwater."],
+      "9": ["Inlaatcombinatie", "Alleen drinkwater: watermeter → inlaat → koude onderkant NEXT. Keerklep + 8 bar-overstort. Niet op de CV; het stippellijntje naar 11.1 is geen leiding."],
+      "10": ["Hoofdwatermeter", "25 mm koud uit de muur. Voedt de inlaatcombinatie, niet het CV-circuit."],
+      "11": ["Expansievat CV 25 L", "Flamco Flexcon op de CV-retour, extra naast de 8 L in de Midea."],
+      "11.1": ["CV-vulinrichting", "Apart kraantje om het CV-circuit bij te vullen. Niet de inlaatcombinatie. Het stippellijntje markeert alleen: twee gescheiden vulpunten."],
+      "12": ["Hoofd-VV + Tado", "Twee vloerpompen in dit blok. Tado schakelt ze, ook tijdens tapwater."],
+      "13": ["Oude CV-as", "Zolder 25 mm, aanbouw 16 mm vloerverwarming plus radiator. Retour komt samen in T-stuk 15."],
+      "14": ["Mengkraan", "Caleffi Ø22 mm. Tank mag tot 60 °C; naar de kranen ca. 40 °C."],
+      "15": ["T-stuk huisretour", "Hier komen de retour van de hoofd-VV en de oude as samen."]
+    };
     const buttons = document.querySelectorAll(".modes button");
     const pipes = document.querySelectorAll(".pipe");
+    const svg = document.querySelector("svg");
+    const info = document.getElementById("part-info");
+    const hint = document.getElementById("part-hint");
     function setMode(mode) {
       buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === mode)));
       pipes.forEach((p) => {
@@ -418,7 +448,26 @@
         p.style.opacity = active ? "1" : "0.2";
       });
     }
+    function showPart(id) {
+      document.querySelectorAll(".num").forEach((el) => {
+        el.classList.toggle("is-on", el.dataset.part === id);
+      });
+      const part = id && PARTS[id];
+      if (!part) {
+        info.hidden = true;
+        hint.hidden = false;
+        return;
+      }
+      hint.hidden = true;
+      info.hidden = false;
+      info.querySelector("h3").textContent = id + "  " + part[0];
+      info.querySelector("p").textContent = part[1];
+    }
     buttons.forEach((b) => b.addEventListener("click", () => setMode(b.dataset.mode)));
+    svg.addEventListener("click", (event) => {
+      const hit = event.target.closest("[data-part]");
+      showPart(hit ? hit.dataset.part : null);
+    });
   </script>
 </body>
 </html>
